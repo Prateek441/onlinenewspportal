@@ -1,0 +1,35 @@
+{% extends 'super_admin/base6.html' %}
+{% load static %}
+{% block title %}KG News Portal/{% endblock%}
+{% block main %}
+<div class="container ">
+    <div class="col-md-12" style="margin-top:20px;">
+
+        <div class="table-responsive">
+  <table class="table table-hover table-bordered table-responsive">
+    <thead style="background-color:gray; margin:10px;">
+      <tr style="text-align:center;">
+        <th>ID</th>
+        <th>Message 1</th>
+        <th>Message 2</th>
+        <th>Date</th>
+        <th>Edit<i class="fa fa-edit"></i></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in msg %}
+      <tr style="text-align:center;">
+        <td style="width:100px;">{{ i.id }}</td>
+          <td><div style="height:200px; overflow:scroll; ">{{i.msg1}}</div></td>
+          <td><div style="height:200px; overflow:scroll; ">{{ i.msg2 }}</div></td>
+        <td style="width:200px;">{{ i.cdate }}</td>
+        <td style="width:200px;"><center><a href="{% url 'edit_wel_msg' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></center></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+        </div>
+       </div>
+</div>
+{% endblock %}

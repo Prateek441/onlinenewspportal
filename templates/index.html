@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}KG News Portal/Home{% endblock%}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/hotel1.css' %}"> {% endblock %}
+{% block main %}
+<br>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/nb1.jpg' %}" alt="Los Angeles">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/nb4.jpg' %}" alt="Chicago">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/nb3.jpg' %}" alt="New York">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+<section>
+  <div class="box1"><center><div class="kp"><h2><strong><marquee behavior="alternate" scrollamount="3px">KG News Portal</marquee></strong></h2></div></center><br><p class="states">29 states and 58 smart cities news in 12 news channels </p><br><p class="toll"><i class="fa fa-phone"></i>Toll Free 18002002000  | <i class="fa fa-envelope"></i> KG_news@gmail.com</p></div>
+</section>
+<section>
+  <h2 class="wel">Welcome to KG news portal</h2><hr class="line">
+  <div class="container welmsg">
+      {% for i in WelMsg %}
+          <p>{{ i.msg }}</p>
+      {% endfor %}
+  {% for i in WelMsg %}
+      <p>{{ i.msg1 }}</p>
+    <p class="welmsg">{{ i.msg2 }}</p></div>
+    <center><a href="{%  url 'about' %}"><button class="know"><strong>Know more about us</strong></button></a></center>
+{% endfor %}
+</section>
+<br><br>
+<section>
+  <div class="container-fluid images">
+    <div class="row">
+        {% for i in Media2 %}
+      <div class="col-lg-3 box2"><img src="{{ i.img.url }}" class="img-responsive" style=" border: 5px solid maroon; padding: 0px;"></div>
+        {% endfor %}
+    </div>
+  </div>
+    <br><br>
+
+</section>
+<section class="utube">
+  <div class="container ">
+    <div class="row">
+      <div class="col-lg-2"></div>
+  <div class="col-lg-8 "><center><iframe width="280" height="240" src="https://www.youtube.com/embed/4B-gll3ETF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></div>
+  </div>
+</div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <h4 class="head"><div class="foot">Our Stationary</div></h4>
+        <ul class="list">
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Magzines</li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG e-news</li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Story Books</li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Rashifal</li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Calendars</li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Publication Nobels</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 footer">
+            <h4 class="head"><div class="foot">Our Brand Names</div></h4>
+        <ul class="list">
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Print Media </li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Graphics World</li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG e-patrika </li>
+          <li><i class="fa fa-arrow-circle-right"></i>  KG Group of News Channels</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 footer">
+            <h4 class="head"><div class="foot">Follow Us</div></h4>
+        <ul class="list">
+          <li><i class="fa fa-facebook-square fa-2x"></i></li>
+          <li><i class="fa fa-instagram fa-2x"></i></li>
+          <li><i class="fa fa-twitter-square fa-2x"></i></li>
+          <li><i class="fa fa-youtube-square fa-2x"></i></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 footer">
+            <h4 class="head"><div class="foot">KG News Portal, Corporate Office</div></h4>
+        <ul class="list">
+          <li><i class="fa fa-map-marker"></i>KG Group of News Media<br>22/21, Sector-43 <br>Jaipur(Raj.) </li>
+          <li><i class="fa fa-phone"></i>  18001234599, +91 554588650
+<i class="fa fa-phone"></i>+91 8448989085</li>
+          <li><i class="fa fa-envelope"></i> KG_news@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copy"><center>copyright<i class="fa fa-copyright"></i>2018,KG News Portal</center></div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+{% endblock %}

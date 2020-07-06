@@ -1,0 +1,28 @@
+{% extends 'super_admin/base6.html' %}
+{% load static %}
+{% block title %}KG News Portal/frontend panel{% endblock%}
+{% block main %}
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+        <div style="background-color:yellow; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Slider</h3>{{allslider}}</div>
+      </div>
+      <div class="col-md-3">
+        <div style="background-color:#35B5A0; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Magzines</h3>{{magzine}}</div>
+      </div>
+      <div class="col-md-3">
+        <div style="background-color:orange; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Owners</h3>3</div>
+      </div>
+      <div class="col-md-3">
+        <div style="background-color:cyan; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Team Member</h3>4</div>
+      </div>
+
+      <div>
+        {{chpost2.title}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

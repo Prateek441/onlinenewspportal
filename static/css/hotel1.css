@@ -1,0 +1,265 @@
+body{
+	margin:0px;
+}
+body  {
+    background-image: url("../images_t/KG logo bg.png") ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+body {
+   background-image: url("../images/KG logo bg.png") ;
+}
+@media screen and (min-width: 480px) {
+  body {
+    background-image:url("../images_t/KG logo bg.png" ) ;
+  }
+}
+.navbar{
+	margin-bottom: 0px;
+	 -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+.navbar-brand>img{
+	width:80px;
+	height: 80px;
+}
+
+.bg-dark {
+    background-color: #660404!important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #1D6841;
+    font-size: 18px;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1D6841;
+    font-size: 18px;
+    background-color: #8f0606!important;
+}
+.best{
+	color: #242C58;
+	line-height: 18px;
+}
+.slide{
+	margin-top: 81px;
+}
+.arrow{
+	background-color: #660404!important;
+	border-radius: 50%;
+	width:50px;
+	height: 50px;
+	line-height: 1px;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+
+    margin-top: 13px;
+}
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+    margin-right: 144px;
+    margin-top: 50px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 18px;
+     padding: 20px;
+     font-family: cursive;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+     color: white;
+     border-bottom: 2px solid white;
+}
+.logo2{
+    width: 60%;
+}
+@media screen and (min-width: 480px) {
+  .logo2 {
+     padding: 5px;
+  }
+}
+
+.book{
+
+	background-color: #8f0606!important;
+	cursor: pointer;
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+.book:hover{
+
+	background-color:#660404!important;
+
+}
+.box1{
+	width: 100%;
+	height: 140px;
+	background-color:  #660404!important;
+	color: white;
+	text-align: center;
+	padding-top: 20px;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: capitalize;
+    background-color: red;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+}
+.box1>p{
+    margin-top: -35px;
+}
+.kp{
+	width: 350px;
+}
+.states{
+	margin-top: -32px;
+}
+.toll{
+	margin-top: -37px;
+}
+.wel{
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 40px;
+}
+.welmsg{
+	text-align: center;
+	padding-top: 10px;
+	font-size: 18px;
+	color: darkred;
+	font-weight: 500;
+}
+.line{
+	width: 5%;
+    border-top: 4px solid darkred;
+}
+.know{
+	background-color: red;
+	color: white;
+	font-size: 15px;
+	border-radius: 20px;
+	padding:8px 10px;
+	cursor: pointer;
+}
+
+.box2>img{
+	width: 100%;
+	height: 400px;
+	padding: 0px;
+}
+.box2>img:hover{
+	filter: grayscale(1%);
+	opacity: 0.7;
+
+}
+.videobg{
+	background-color: white;
+	margin-top: 25px;
+}
+.footer {
+    background-color: #0b0b0b;
+    height: 300px;
+}
+.images{
+	background-color: white;
+}
+.utube{
+	background-color: white;
+}
+.list>li{
+	list-style: none;
+	text-align: left;
+	color: white;
+	font-weight: 300;
+}
+.list>li:hover{
+	list-style: none;
+	text-align: left;
+	color: #e23d3d;
+	font-weight: 300;
+	cursor: pointer;
+}
+.foot{
+	border-bottom: 2px solid white;
+	font-weight: 400;
+}
+.foot:hover{
+	border-bottom: 2px solid #660404!important;
+	font-weight: 400;
+}
+.head{
+	text-align: left;
+	margin-top: 40px;
+	color: white;
+}
+.copy{
+	background-color: #111111;
+	color: white;
+}
+.tablist{
+	margin-top: 200px;
+}
+.modal-title{
+	text-align: center;
+	color: maroon;
+}
+.modal-body{
+	    background-color: rgba(209, 81, 81, 0.54);
+}
+.ftext{
+	color:#800000c2;
+	font-family: cursive;
+}

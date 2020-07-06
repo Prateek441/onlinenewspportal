@@ -1,0 +1,57 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}KG News Portal/User Verification{% endblock%}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/hotel1.css' %}"> {% endblock %}
+{% block main %}<br><br><br><br><br><br>
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div style="background-color: #800000ab
+                ; padding:20px; margin:15px; border-radius: 20px;">
+                    <h3 style="text-align: center; font-family: cursive; color: white;">Verify Your OTP</h3>
+                    <form method="post">
+                        {%csrf_token%}
+
+                        <input type="number" name="otp_val" id="otp_id" class="form-control"><br>
+                        {% if messages %}
+    <ul class="messages alert alert-danger">
+        {% for message in messages %}
+        <li
+        {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+                        <center><button type="submit" name="verify" id="cbtn" class="btn btn-primary">verify</button>
+                        </center>
+                        <script>
+                            $(document).ready(function(){
+
+                            $("#otp_id").keyup(function(){
+                            var oid =$("#otp_id").val();
+                                if (oid.length==4){
+
+                                $("#otp_id").css('border','green solid 2px');
+                                $("#cbtn").focus();
+
+
+                                }
+            <!--$("#otp_id").css('border','red solid 2px');-->
+                            });
+
+                            });
+    </script>
+
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends 'super_admin/base5.html' %}
+{% load static %}
+{% block title %}KG News Portal/Backend Panel{% endblock%}
+{% block main %}
+<section>
+<div class="container tablist" style="margin-top: 0px;">
+  <br>
+  <!-- Nav pills -->
+  <div class="container"><div class="row"> <div class="col-sm-3"></div> <div class="col-sm-6">
+<ul class="nav nav-pills " role="tablist" >
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home">Total Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1">Blocked Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu2">Active Users</a>
+    </li>
+  </ul>
+</div></div></div>
+<br>
+<div>
+<div class="container">
+  <div class="row">
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active" style="background-color:white;"><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover table-bordered table-responsive">
+              <thead style="background-color:gray; margin:10px;">
+                  <tr>
+                    <th>ID</th>
+                    <th width="200px;">Username</th>
+                    <th>Email</th>
+                    <th width="150px;">Password</th>
+                    <th width="150px;">Mobile</th>
+                    <th width="100px;">Status</th>
+                    <th>Edit<i class="fa fa-edit"></i></th>
+                    <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+                  </tr>
+              </thead>
+            <tbody>
+            {% for i in users %}
+                  <tr>
+                    <td>{{ i.id }}</td>
+                    <td><div>{{ i.username }}</div></td>
+                    <td><div>{{ i.email }}</div></td>
+                    <td><div>{{ i.password }}</div></td>
+                    <td><div>{{i.mobile}}</div></td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'edit_user' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{% url 'del_user' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="menu1" class="container tab-pane fade" style="background-color:white;"><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover table-bordered table-responsive">
+              <thead style="background-color:gray; margin:10px;">
+                  <tr>
+                    <th>ID</th>
+                    <th width="200px;">Username</th>
+                    <th width="250px;">Email</th>
+                    <th width="150px;">Password</th>
+                    <th width="150px;">Mobile</th>
+                    <th width="100px;">Status</th>
+                    <th>Edit<i class="fa fa-edit"></i></th>
+                    <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+                  </tr>
+              </thead>
+            <tbody>
+            {% for i in blockuser %}
+                  <tr>
+                    <td>{{ i.id }}</td>
+                    <td><div>{{ i.username }}</div></td>
+                    <td><div>{{ i.email }}</div></td>
+                    <td><div>{{ i.password }}</div></td>
+                    <td><div>{{i.mobile}}</div></td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'edit_user' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{% url 'del_user' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="menu2" class="container tab-pane fade" style="background-color:white;"><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover table-bordered table-responsive">
+              <thead style="background-color:gray; margin:10px;">
+                  <tr>
+                    <th>ID</th>
+                    <th width="200px;">Username</th>
+                    <th width="250px;">Email</th>
+                    <th width="150px;">Password</th>
+                    <th width="150px;">Mobile</th>
+                    <th width="100px;">Status</th>
+                    <th>Edit<i class="fa fa-edit"></i></th>
+                    <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+                  </tr>
+              </thead>
+            <tbody>
+            {% for i in activeuser %}
+                  <tr>
+                    <td>{{ i.id }}</td>
+                    <td><div>{{ i.username }}</div></td>
+                    <td><div>{{ i.email }}</div></td>
+                    <td><div>{{ i.password }}</div></td>
+                    <td><div>{{i.mobile}}</div></td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'edit_user' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{% url 'del_user' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+  <button class="btn btn-success" style="margin:20px 30px;"><a href="{% url 'add_user' %}" style="color:white;"><i class="fa fa-user-plus"></i> Add User</a></button></div>
+</section>
+
+{% endblock %}

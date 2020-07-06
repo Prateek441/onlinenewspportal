@@ -1,0 +1,255 @@
+{% extends 'super_admin/base5.html' %}
+{% load static %}
+{% block title %}KG News Portal/Backend Panel{% endblock%}
+{% block main %}
+<section>
+<div class="container tablist" style="margin-top: 0px;">
+  <br>
+  <!-- Nav pills -->
+  <div class="container"><div class="row"> <div class="col-sm-3"></div> <div class="col-sm-6">
+<ul class="nav nav-pills " role="tablist" >
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home">All Channels</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1">Blocked Channels</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu2">Active Channels</a>
+    </li>
+  </ul>
+</div></div></div>
+<br>
+<div>
+<div class="container">
+  <div class="row">
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active" style="background-color:white;"><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover table-bordered table-responsive">
+              <thead style="background-color:gray; margin:10px;">
+                  <tr>
+                    <th>ID</th>
+                    <th width="200px;">Channel Name</th>
+                    <th>Image</th>
+                    <th width="150px;">Create Date</th>
+                    <th width="150px;">Reg. Id</th>
+                    <th width="100px;">Password</th>
+                    <th width="100px;">Email</th>
+                    <th width="100px;">Phone</th>
+                    <th width="100px;">Status</th>
+                    <th>Edit<i class="fa fa-edit"></i></th>
+                    <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+                  </tr>
+              </thead>
+            <tbody>
+            {% for i in channels %}
+                  <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.chname }}</td>
+                    <td><img src="{{i.chimg.url}}" alt="" width="100px;"></td>
+                    <td><div>{{ i.cdate }}</div></td>
+                    <td><div>{{ i.reg_id }}</div></td>
+                    <td><div>{{i.password}}</div></td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.phone }}</td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'edit_ch' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{% url 'del_ch' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+          <div class="container">
+        <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-4">
+            <center>
+     {% if channels.has_other_pages %}
+            <ul class="pagination">
+                {% if channels.has_previous %}
+                <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in channels.paginator.page_range %}
+                {% if channels.number == i %}
+                <li class="active"><span class="btn btn-primary" >{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}" class="btn btn-primary" style="background-color:#2f7cceeb; border-color:#2f7cceeb;">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if channels.has_next %}
+                <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+            </center>
+        </div>
+    </div>
+    </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="menu1" class="container tab-pane fade" style="background-color:white;"><br>
+       <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover table-bordered table-responsive">
+              <thead style="background-color:gray; margin:10px;">
+                  <tr>
+                    <th>ID</th>
+                    <th width="200px;">Channel Name</th>
+                    <th>Image</th>
+                    <th width="150px;">Create Date</th>
+                    <th width="150px;">Reg. Id</th>
+                    <th width="100px;">Password</th>
+                    <th width="100px;">Email</th>
+                    <th width="100px;">Phone</th>
+                    <th width="100px;">Status</th>
+                    <th>Edit<i class="fa fa-edit"></i></th>
+                    <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+                  </tr>
+              </thead>
+            <tbody>
+            {% for i in blockch %}
+                  <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.chname }}</td>
+                    <td><img src="{{i.chimg.url}}" alt="" width="100px;"></td>
+                    <td><div>{{ i.cdate }}</div></td>
+                    <td><div>{{ i.reg_id }}</div></td>
+                    <td><div>{{i.password}}</div></td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.phone }}</td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'edit_ch' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{% url 'del_ch' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-4">
+            <center>
+     {% if blockch.has_other_pages %}
+            <ul class="pagination">
+                {% if blockch.has_previous %}
+                <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in blockch.paginator.page_range %}
+                {% if blockch.number == i %}
+                <li class="active"><span class="btn btn-primary" >{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}" class="btn btn-primary" style="background-color:#2f7cceeb; border-color:#2f7cceeb;">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if blockch.has_next %}
+                <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+            </center>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="menu2" class="container tab-pane fade" style="background-color:white;"><br>
+       <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover table-bordered table-responsive">
+              <thead style="background-color:gray; margin:10px;">
+                  <tr>
+                    <th>ID</th>
+                    <th width="200px;">Channel Name</th>
+                    <th>Image</th>
+                    <th width="150px;">Create Date</th>
+                    <th width="150px;">Reg. Id</th>
+                    <th width="100px;">Password</th>
+                    <th width="100px;">Email</th>
+                    <th width="100px;">Phone</th>
+                    <th width="100px;">Status</th>
+                    <th>Edit<i class="fa fa-edit"></i></th>
+                    <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+                  </tr>
+              </thead>
+            <tbody>
+            {% for i in activech %}
+                  <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.chname }}</td>
+                    <td><img src="{{i.chimg.url}}" alt="" width="100px;"></td>
+                    <td><div>{{ i.cdate }}</div></td>
+                    <td><div>{{ i.reg_id }}</div></td>
+                    <td><div>{{i.password}}</div></td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.phone }}</td>
+                    <td>{{ i.status }}</td>
+                    <td><a href="{% url 'edit_ch' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{% url 'del_ch' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                  </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-4">
+            <center>
+     {% if activech.has_other_pages %}
+            <ul class="pagination">
+                {% if activech.has_previous %}
+                <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in activech.paginator.page_range %}
+                {% if activech.number == i %}
+                <li class="active"><span class="btn btn-primary" >{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}" class="btn btn-primary" style="background-color:#2f7cceeb; border-color:#2f7cceeb;">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if activech.has_next %}
+                <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+            </center>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+ <button class="btn btn-success" style="margin:20px 30px;"><a href="{% url 'ad_add_newsch' %}" style="color:white;"><i class="fa fa-plus"></i> Add News Channel</a></button></div>
+</div>
+</section>
+
+
+{% endblock %}

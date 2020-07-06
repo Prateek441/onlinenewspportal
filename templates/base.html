@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>{% block title %}{% endblock%}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|ZCOOL+XiaoWei" rel="stylesheet">
+  {% block link %}
+    {% endblock %}
+<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="{%  url 'index' %}"><img src="{% static 'images/KG logo.png' %}" class="logo"><span><img src="{% static 'images/lg3.png' %}" width="250px;"></span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="{%  url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%  url 'about' %}"><i class="fa fa-users" aria-hidden="true"></i> About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%  url 'channels' %}"><i class="fa fa-newspaper-o" aria-hidden="true"></i>  Channels</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%  url 'contact' %}"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+      </li>
+        <li class="nav-item">
+            <a href="{% url 'u_login' %}"><button class="btn nav-link" type="button"  style="background-color: maroon; color:white;"><i class="fa fa-user" aria-hidden="true"></i>
+                <span class="caret"></span></button></a>
+                  </li>
+{#        <div class="dropdown" >#}
+{#    <button class="btn  dropdown-toggle nav-link" type="button" data-toggle="dropdown" style="background-color: maroon;"><i class="fa fa-user" aria-hidden="true"></i>#}
+{#    <span class="caret"></span></button>#}
+{#    <ul class="dropdown-menu">#}
+{#      <li><a href="#">User Login</a></li>#}
+{#        <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Channel Login</button></li>#}
+{#      <li><a href="#">Admin Login</a></li>#}
+{#    </ul>#}
+{#  </div>#}
+
+    </ul>
+{#    </ul>#}
+  </div>
+</nav>
+    <div class="container">
+    <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Channel Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          form
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+    </div>
+</header>
+{% block main %}
+
+{% endblock %}
+</body>
+</html>

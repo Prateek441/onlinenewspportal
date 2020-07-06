@@ -1,0 +1,74 @@
+{% extends 'ch_admin/base3.html' %}
+{% load static %}
+{% block title %}KG News Portal/{% for i in chdetail %}{{i.chname}}{% endfor %}{% endblock%}
+{% block main %}
+<div class="container ">
+        <h4 style="text-align:center; font-family:cursive;"><i class="fa fa-eye"></i> All Showing Posts</h4>
+        <div class="table-responsive">
+  <table class="table table-hover table-bordered table-responsive">
+    <thead style="background-color:gray; margin:10px;">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Sub Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Category</th>
+        <th>Post Date</th>
+        <th>Edit<i class="fa fa-edit"></i></th>
+        <th>Delete<i class="fa fa-trash" aria-hidden="true"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in all_post1 %}
+      <tr>
+        <td>{{ i.id }}</td>
+        <td><div style="height:150px; overflow:scroll;">{{ i.title }}</div></td>
+        <td><div style="height:150px; overflow:scroll;">{{ i.sub_title }}</div></td>
+        <td><div style="height:150px; overflow:scroll;">{{ i.Description }}</div></td>
+        <td><div style="width:100px;height:150px; overflow:scroll;"><img src="{{ i.img.url }}" alt="" width="100px;"></div></td>
+        <td>{{ i.state }}</td>
+        <td>{{ i.state }}</td>
+        <td>{{ i.category }}</td>
+        <td>{{ i.cdate }}</td>
+        <td><a href="{% url 'edit_post' i.id%}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+        <td><a href="{% url 'del_post' i.id %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+        </div>
+       </div>
+ <div class="container">
+        <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-4">
+            <center>
+     {% if all_post1.has_other_pages %}
+            <ul class="pagination">
+                {% if all_post1.has_previous %}
+                <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in all_post1.paginator.page_range %}
+                {% if all_post1.number == i %}
+                <li class="active"><span class="btn btn-primary" >{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}" class="btn btn-primary" style="background-color:#2f7cceeb; border-color:#2f7cceeb;">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if all_post1.has_next %}
+                <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+            </center>
+        </div>
+    </div>
+    </div>
+{% endblock %}

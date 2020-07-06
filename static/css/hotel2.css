@@ -1,0 +1,204 @@
+.navbar{
+	margin-bottom: 0px;
+	height: 140px;
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 2s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+    margin-right: 144px;
+    margin-top: 50px;
+}
+body  {
+    background-image: url("../images/abt8.png" ) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.navbar-brand>img{
+	width:80px;
+	height: 80px;
+}
+.bg-dark {
+    background-color: #660404!important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #1D6841;
+    font-size: 18px;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1D6841;
+    font-size: 18px;
+    background-color: #8f0606!important;
+}
+.book{
+
+	background-color: #8f0606!important;
+	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+
+}
+.book:hover{
+
+	background-color:#660404!important;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 18px;
+     padding: 20px;
+     font-family: cursive;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+     color: white;
+     border-bottom: 2px solid white;
+}
+.logo2{
+    width: 60%;
+}
+@media screen and (min-width: 480px) {
+  .logo2 {
+     padding: 5px;
+  }
+}
+
+
+.list>li{
+	list-style: none;
+	text-align: left;
+	color: white;
+	font-weight: 300;
+}
+.list>li:hover{
+	list-style: none;
+	text-align: left;
+	color: #e23d3d;
+	font-weight: 300;
+	cursor: pointer;
+}
+.owners{
+	text-align: center;
+	color: white;
+	font-family: cursive;
+	font-size: 50px;
+    margin-top: 150px;
+}
+.owners1{
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    font-size: 50px;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    border-radius: 50px 10px;
+}
+.footer {
+    background-color: #0b0b0b;
+    height: 300px;
+}
+.head{
+	text-align: left;
+	margin-top: 40px;
+	color: white;
+}
+.copy{
+	background-color: #111111;
+	color: white;
+}
+.tablist{
+	margin-top: 200px;
+}
+.foot{
+	border-bottom: 2px solid white;
+	font-weight: 400;
+}
+.foot:hover{
+	border-bottom: 2px solid #660404!important;
+	font-weight: 400;
+}
+.namepro{
+	text-align: center;
+}
+.namepro1{
+	text-align: justify;
+	color: #660404!important;
+}
+.b1{
+	border: 2px solid gray;
+	background-color: #f7eaea;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #3EB8C2;
+    background-color: #f7eaea;
+}
+a{
+    color: #edf2f8;
+}
+.tebs{
+	margin-left: 250px;
+}
+
+.teamname{
+	text-align: center;
+}
+.post{
+	text-align:center;
+}
+.imgbg>img{
+	padding: 20px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	border: 2px solid #3eb8c2;
+}
+.imgbg{
+	background-color: #f7eaea;
+	border:2px solid gray;
+	margin: 10px 15px 25px 15px;
+
+}
+.aboutbg{
+  visibility: hidden;
+}
+@media screen and (min-width: 480px) {
+  .aboutbg {
+    visibility:inherit;
+  }
+}

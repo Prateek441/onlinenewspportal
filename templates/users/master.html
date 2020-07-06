@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock%}</title>
+    <link rel="icon" href="{% static 'users/pin.jpg' %}">
+     <link rel="stylesheet" href="{% static 'users/css/bootstrap.css' %}">
+  <script src="{% static 'users/js/jquery.min.js' %}"></script>
+  <script src="{% static 'users/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'users/css/mystyle.css' %}">
+
+
+    <style>
+body{
+    background:#ddd;
+    margin:0px;
+    }
+</style>
+</head>
+
+<body>
+
+{% block main %}
+
+{% endblock %}
+</body>
+</html>

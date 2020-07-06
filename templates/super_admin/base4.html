@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {% endblock %}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #660404!important;;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 0px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.navbar{
+background-color:#660404!important;
+}
+.tabs{
+background-color:maroon;
+padding:2px;
+margin:1px;
+}
+.active{
+background-color:#a71818;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="tabs active"><a href="{% url 'ch_dashboard' %}"> Dashboard</a></div>
+  <div class="tabs "><a href="{% url 'ad_slider' %}"><i class="fa fa-slideshare" aria-hidden="true"></i> Slider</a></div>
+  </div>
+
+<div id="main">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <span style="font-size:30px;cursor:pointer; color:white;" onclick="openNav()">&#9776; </span>
+    <a href="{% url 'choice_dash' %}" class="navbar-brand" style="padding-left:15px;"> <span><img src="{% static 'images_t/KG logo.png' %}" alt="" width="50px" height="50px"><img src="{% static 'images/lg4.png' %}" width="120px;"
+                                                                                                         alt=""></span> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color:white; padding:10px; margin-top:15px; font-family:cursive;">{{i.reg_id}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'ch_profile' %}"><img src="{{ad_pro.image.url}}" alt="" width="60px" height="60px;" style="
+
+    border: 5px solid maroon;
+    position:relative;
+
+    background-color:white;
+
+    "></a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+    {% block main %}
+
+{% endblock %}
+
+    <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+</body>
+</html>

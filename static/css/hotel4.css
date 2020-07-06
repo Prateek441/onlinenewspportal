@@ -1,0 +1,167 @@
+body  {
+    background-image: url("../images/bg.jpg" ) ;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.navbar{
+	margin-bottom: 0px;
+	 -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+.navbar-brand>img{
+	width:80px;
+	height: 80px;
+}
+.logo2{
+    width: 60%;
+}
+@media screen and (min-width: 480px) {
+  .logo2 {
+     padding: 5px;
+  }
+}
+
+.bg-dark {
+    background-color: #660404!important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #1D6841;
+    font-size: 18px;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1D6841;
+    font-size: 18px;
+    background-color: #8f0606!important;
+}
+.ml-auto, .mx-auto {
+    margin-left: auto!important;
+    margin-right: 144px;
+    margin-top: 50px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 18px;
+     padding: 20px;
+     font-family: cursive;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+     color: white;
+     border-bottom: 2px solid white;
+}
+.book{
+
+    background-color: #8f0606!important;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+     0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: #ff8080;}
+    25%  {background-color: #ff4d4d;}
+    50%  {background-color: #ff3333;}
+    100% {background-color: #660404!important;}
+
+}
+.book:hover{
+
+    background-color:#660404!important;
+    cursor: pointer;
+
+}
+.footer {
+    background-color: #0b0b0b;
+    height: 300px;
+}
+.list>li{
+    list-style: none;
+    text-align: left;
+    color: white;
+    font-weight: 300;
+}
+.list>li:hover{
+    list-style: none;
+    text-align: left;
+    color: #e23d3d;
+    font-weight: 300;
+    cursor: pointer;
+}
+.foot{
+    border-bottom: 2px solid white;
+    font-weight: 400;
+}
+.foot:hover{
+    border-bottom: 2px solid #660404!important;
+    font-weight: 400;
+}
+.head{
+    text-align: left;
+    margin-top: 40px;
+    color: white;
+}
+.copy{
+    background-color: #111111;
+    color: white;
+}
+.tablist{
+    margin-top: 200px;
+}
+.mg{
+	margin-top: 140px;
+}
+.c1{
+	font-size: 40px;
+	color: black;
+	font-family: cursive;
+	text-align: center;
+}
+.touch{
+	    color: #900000;
+	text-transform: capitalize;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.send{
+    padding: 10px 20px;
+    width: 150px;
+    font-family: cursive;
+    font-size: 18px;
+}
+.send:hover{
+    background-color: maroon;
+    font-size: 18px;
+}
+.cont1{
+    font-size: 18px;
+    font-family: cursive;
+    color: #753247fa;
+}

@@ -1,0 +1,44 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}KG News Portal/Channel Login{% endblock%}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/hotel1.css' %}"> {% endblock %}
+{% block main %}
+    <br><br><br><br><br>
+ <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div style="background-color: #800000ab
+                ; padding:20px; margin:15px; border-radius: 20px;">
+                    <h3 style="text-align: center; font-family: cursive; color: white;">Super Admin Login</h3>
+                   <form method="post">
+                    {% csrf_token%}
+                       <input type="email" name="email" class="form-control" placeholder="Enter Email Address*"><br>
+                       <input type="password" name="password" class="form-control" placeholder="Enter Password*">
+
+                    {% if messages %}
+    <ul class="messages alert alert-danger">
+        {% for message in messages %}
+        <li
+        {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+    <button  class="btn btn-success" type="submit" >Login</button>
+
+
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+{%endblock%}

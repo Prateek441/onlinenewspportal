@@ -1,0 +1,19 @@
+{% extends 'super_admin/base5.html' %}
+{% load static %}
+{% block title %}KG News Portal/Backend Panel{% endblock%}
+{% block main %}
+<div class="container">
+    <div style="background-color:#be2626a6; margin:20px; color:maroon;">
+      <div class="row">
+          <div class="col-md-12">
+          <h4 style="text-align:center; margin:10px; font-family:cursive;">Add News Channela</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+            <div class="col-md-12" style="margin:35px; padding:10px;">{{form}}</div>
+            <input type="submit" name="save" value="Add Post" class="btn btn-primary form-control">
+             </form>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

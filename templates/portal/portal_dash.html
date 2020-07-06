@@ -1,0 +1,94 @@
+{% extends 'portal/base2.html' %}
+{% load static %}
+{% block title %}KG News Portal/Dashboard{% endblock%}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/hotel1.css' %}">
+<style>
+    .drop{
+        color:white;
+        background-color: maroon;
+    }
+</style>
+
+{% endblock %}
+{% block user %} <img src="{{upro1.image.url}}" alt="" width="70px" height="70px;" style="
+
+    border: 5px solid maroon;
+    border-radius: 50%;
+    position:relative;
+    padding:3px;
+    background-color:white;
+
+    ">
+{% endblock %}
+{% block main %}
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            {% for i in all_post1 %}
+            <div class="col-md-6" >
+                <div style="background-color: #b08181ba;
+    padding: 10px;
+    border: 2px solid gray; margin:5px;">
+                <div class="row">
+                  <div class="col-md-6" style=" overflow:hidden; ">
+                    <div style=" border:5px solid gray; overflow:hidden"><img  src="{{i.img.url}}" alt="" style="overflow:hidden; height:220px; width:100%" ></div>
+                  </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12"><div style=" font-family:cursive; color:black; text-align:center; text-decoration:underline;">{{i.cdate}}</div></div>
+                            <div class="col-md-6">
+                             <div style=" font-family:cursive; color:black;"><i class="fa fa-list-alt" aria-hidden="true"></i> {{i.category}}</div>
+                            </div>
+                            <div class="col-md-6">
+                            <div style=" font-family:cursive; color:black; font-weight:bold;"><i class="fa fa-map-marker" aria-hidden="true"></i>{{i.state}}</div>
+                            </div>
+                            <div class="col-md-12">
+                            <h3 style="font-family: cursive; text-transform:capitalize; font-size:20px; font-weight:bold; ">{{i.title}}</h3>
+                            <h3 style="font-family: cursive; text-transform:capitalize; font-size:16px; font-weight:light; "><b>{{i.city}}</b> {{i.Description | slice:110}}<a
+                                    href="{% url 'details' i.id%}"> see more..</a></h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+                {% endfor %}
+            </div>
+        </div>
+<div class="container">
+        <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-4">
+            <center>
+     {% if all_post1.has_other_pages %}
+            <ul class="pagination">
+                {% if all_post1.has_previous %}
+                <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in all_post1.paginator.page_range %}
+                {% if all_post1.number == i %}
+                <li class="active"><span class="btn btn-primary" >{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}" class="btn btn-primary" style="background-color:#2f7cceeb; border-color:#2f7cceeb;">{{ i }}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if all_post1.has_next %}
+                <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+            </center>
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}

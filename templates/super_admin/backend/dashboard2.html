@@ -1,0 +1,55 @@
+{% extends 'super_admin/base5.html' %}
+{% load static %}
+{% block title %}KG News Portal/Backend Panel{% endblock%}
+{% block main %}
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+          <div style="margin:10px;">
+            <div style="background-color:yellow; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Channels</h3>{{allch}}</div>
+          </div>
+          </div>
+      <div class="col-md-3">
+          <div style="margin:10px;">
+        <div style="background-color:#35B5A0; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Posts</h3>{{totalpost}}</div>
+          </div>
+          </div>
+      <div class="col-md-3">
+          <div style="margin:10px;">
+        <div style="background-color:orange; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Blocked Posts</h3>{{blockpost}}</div>
+          </div>
+          </div>
+      <div class="col-md-3">
+          <div style="margin:10px;">
+        <div style="background-color:cyan; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Viewed Posts</h3>{{unblockpost}}</div>
+          </div>
+          </div>
+        <div class="col-md-3">
+            <div style="margin:10px;">
+        <div style="background-color:cyan; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Users</h3>{{totaluser}}</div>
+            </div>
+            </div>
+        <div class="col-md-3">
+            <div style="margin:10px;">
+        <div style="background-color:orange; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Blocked Users</h3>{{totalblockuser}}</div>
+            </div>
+            </div>
+            <div class="col-md-3">
+            <div style="margin:10px;">
+        <div style="background-color:#35B5A0; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Active Users</h3>{{activeusers}}</div>
+            </div>
+            </div>
+        <div class="col-md-3">
+          <div style="margin:10px;">
+            <div style="background-color:yellow; padding:10px; text-align:center"><h3 style="font-family: 'Dosis', sans-serif; font-weight:bolder;">Total Active Admin</h3>{{totaladmin}}</div>
+          </div>
+          </div>
+      <div>
+        {{chpost2.title}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
