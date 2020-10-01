@@ -1,4 +1,4 @@
-from django import forms
+from django import forms #in the form we can add any types of field and widget
 from  .models import Users
 from .models import Userprofile
 class SignpForm(forms.ModelForm):
